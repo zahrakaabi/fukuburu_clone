@@ -9,3 +9,24 @@ body {
     padding: 0;
     background-color: #282c34;
 }
+
+/* --------------------- */
+/*         GLOBALS       */
+/* --------------------- */
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.full-height {
+    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
+}

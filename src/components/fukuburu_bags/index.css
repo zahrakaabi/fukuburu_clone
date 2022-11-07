@@ -1,0 +1,36 @@
+.bags_wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.support {
+    width: 850px;
+    vertical-align: middle;
+}
+
+.bags {    
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: fit-content;
+    transform: rotate(-31deg) translate(68%, 22%);
+}
+
+.bags-container:nth-child(1) {
+    margin-left: -9rem;
+}
+
+.bags-container:nth-child(2) {
+    margin-left: -6rem;
+}
+
+.bags-container:nth-child(3) {
+    margin-left: -3rem;
+}
+
+.bag {
+    width: 70px;
+    margin-right: 10px;
+    transform: rotate(35deg);
+}

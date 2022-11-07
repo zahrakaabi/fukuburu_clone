@@ -3,6 +3,9 @@
 /* ----------------------------------------- */
 // Packages
 
+// UI Local Componenets
+import { FukuburuBags } from './components';
+
 // Styles
 import './shared/styles/global.css';
 
@@ -12,7 +15,9 @@ import './shared/styles/global.css';
 function App() {
   /* ************* RENDERING *************** */
   return (
-    <div>hello fukuburu</div>
+    <div className="full-height flex justify-center items-center">
+      <FukuburuBags />
+    </div>
   );
 }
 
