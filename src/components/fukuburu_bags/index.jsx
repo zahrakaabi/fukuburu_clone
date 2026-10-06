@@ -23,7 +23,7 @@ function FukuburuBags() {
   return (
     <div className="container bags-wrapper">
       <img className="support" src={BAGS_SUPPORT} alt="support" />
-      <div className="bags" style={{ "--row-count": ROW_COUNT }}>
+      <div className="bags">
         {Array.from({ length: ROW_COUNT }, (_, i) => (
           <BagRow 
             key={i} 
@@ -48,8 +48,8 @@ function BagRow({ bags, index }) {
       className="bags-container flex"
       style={{ marginLeft: `${index * ROW_OFFSET}rem` }}
     >
-      {bags.map(({ id, image }) => (
-        <img className="bag" key={id} src={image} alt="bag" />
+      {bags.map(({ id, image, bgColor }) => (
+        <img className="bag" key={id} src={image} alt={`${bgColor}_bag`} loading="lazy" />
       ))}
     </div>
   );
