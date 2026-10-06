@@ -1,7 +1,13 @@
-.bags_wrapper {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
+:root {  
+  --tilt: -32deg;
+  --bag-tilt: 35deg;
+  --row-offset: 3rem;
+}
+
+.bags-wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .support {
@@ -14,23 +20,11 @@
     left: 0;
     top: 0;
     width: fit-content;
-    transform: rotate(-31deg) translate(68%, 22%);
-}
-
-.bags-container:nth-child(1) {
-    margin-left: -9rem;
-}
-
-.bags-container:nth-child(2) {
-    margin-left: -6rem;
-}
-
-.bags-container:nth-child(3) {
-    margin-left: -3rem;
+    transform: rotate(var(--tilt)) translate(27%, 16%);
 }
 
 .bag {
     width: 70px;
     margin-right: 10px;
-    transform: rotate(35deg);
+    transform: rotate(var(--bag-tilt));
 }

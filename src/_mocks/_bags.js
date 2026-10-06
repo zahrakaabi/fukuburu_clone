@@ -2,16 +2,16 @@
 /*                DEPENDENCIES                 */ 
 /* ------------------------------------------- */
 // Images
-import RED_BAG from '../../images/bags/red_bag.png';
-import BLUE_BAG from '../../images/bags/blue_bag.png';
-import YELLOW_BAG from '../../images/bags/yellow_bag.png';
-import GREEN_BAG from '../../images/bags/green_bag.png';
-import ORANGE_BAG from '../../images/bags/orange_bag.png';
+import RED_BAG from '../images/bags/red_bag.png';
+import BLUE_BAG from '../images/bags/blue_bag.png';
+import YELLOW_BAG from '../images/bags/yellow_bag.png';
+import GREEN_BAG from '../images/bags/green_bag.png';
+import ORANGE_BAG from '../images/bags/orange_bag.png';
 
 /* ------------------------------------------- */
-/*                  BAGS API                   */ 
+/*                    BAGS                     */ 
 /* ------------------------------------------- */
-export const BAGS_API = [
+export const BAGS = [
     {
         id: 1,
         image: RED_BAG,

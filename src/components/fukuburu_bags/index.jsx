@@ -4,41 +4,53 @@
 // Packages
 
 // Images
-import BAGS_SUPPORT from '../../images/base_suppor.svg';
+import { BAGS } from '../../_mocks';
 
-// BAGS APIs
-import { BAGS_API } from '../../shared/utils/bagsAPI';
+// Utils
+import BAGS_SUPPORT from '../../images/base_suppor.svg';
 
 // Styles
 import './index.css';
 
-/* ----------------------------------------- */
-/*                FUKUBURU                   */
-/* ----------------------------------------- */
-function FukuburuBags() {
-  /* --------------- GET BAGS -------------- */ 
-  function GetBags() {
-    var allBags = [];
-    const GET_BAGS = BAGS_API?.map((bag) => <img className="bag" key={bag.id} src={bag.image} alt="bag" />)
-    for (var i = 0; i < 4; i++) {
-      allBags.push(
-        <div className="bags-container flex" key={i}>
-          {GET_BAGS}
-        </div>
-      );
-    }
-    return allBags;
-  }
+/* -------------------------------------------------------------------------- */
+/*                             FUKUBURU COMPONENT                             */
+/* -------------------------------------------------------------------------- */
+const ROW_COUNT = 4;
+const ROW_OFFSET = 3; // in rem
 
-  /* ************* RENDERING *************** */
+function FukuburuBags() {
+/* -------------------------------- RENDERING ------------------------------- */
   return (
-    <div className="container bags_wrapper">
-        <img className="support" src={BAGS_SUPPORT} alt="support" />
-        <div className="bags">
-          {GetBags()}
-        </div>
+    <div className="container bags-wrapper">
+      <img className="support" src={BAGS_SUPPORT} alt="support" />
+      <div className="bags" style={{ "--row-count": ROW_COUNT }}>
+        {Array.from({ length: ROW_COUNT }, (_, i) => (
+          <BagRow 
+            key={i} 
+            index={i}
+            bags={BAGS} 
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
 export default FukuburuBags;
+
+/* -------------------------------------------------------------------------- */
+/*                              BAG ROW COMPONENT                             */
+/* -------------------------------------------------------------------------- */
+function BagRow({ bags, index }) {
+/* -------------------------------- RENDRING -------------------------------- */
+  return (
+    <div 
+      className="bags-container flex"
+      style={{ marginLeft: `${index * ROW_OFFSET}rem` }}
+    >
+      {bags.map(({ id, image }) => (
+        <img className="bag" key={id} src={image} alt="bag" />
+      ))}
+    </div>
+  );
+};
