@@ -4,7 +4,7 @@
 // Packages
 
 // UI Local Componenets
-import { FukuburuBags } from './components';
+import { FukuburuBags, ZoomableContent } from './components';
 
 // Styles
 import './shared/styles/global.css';
@@ -16,7 +16,9 @@ function App() {
   /* ************* RENDERING *************** */
   return (
     <div className="full-height flex justify-center items-center">
-      <FukuburuBags />
+      <ZoomableContent>
+        <FukuburuBags />
+      </ZoomableContent>
     </div>
   );
 }

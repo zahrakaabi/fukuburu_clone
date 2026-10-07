@@ -1,0 +1,19 @@
+.zoom-controls {
+    gap: 10px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+.zoom-controls input[type="range"] {
+    cursor: pointer;
+    flex: 1;
+    accent-color: orange;
+}
+
+.controls {
+    cursor: pointer;
+    border-radius: 50%;
+    height: 25px;
+    aspect-ratio: 1;
+}
