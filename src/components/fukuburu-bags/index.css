@@ -4,27 +4,7 @@
   --row-offset: 3rem;
 }
 
-.bags-wrapper {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.support {
-    width: 850px;
-    vertical-align: middle;
-}
-
-.bags {    
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: fit-content;
-    transform: rotate(var(--tilt)) translate(27%, 16%);
-}
-
-.bag {
-    width: 70px;
-    margin-right: 10px;
-    transform: rotate(var(--bag-tilt));
+.remaining {
+  color: white;
+  font-size: 1rem;
 }
