@@ -1,7 +1,26 @@
-:root {  
-  --tilt: -32deg;
-  --bag-tilt: 35deg;
-  --row-offset: 3rem;
+.bags-board {
+  position: relative;
+  margin: 0 auto;
+}
+
+.board {
+  position: absolute;
+  inset: 0;
+}
+
+.bag-item {
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  transform: translate(-70%, -65%);
+}
+
+.bag-item img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .remaining {
