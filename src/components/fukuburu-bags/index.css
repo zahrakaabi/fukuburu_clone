@@ -8,21 +8,6 @@
   inset: 0;
 }
 
-.bag-item {
-  background: none;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease;
-  transform: translate(-70%, -65%);
-}
-
-.bag-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .remaining {
   color: white;
   font-size: 1rem;

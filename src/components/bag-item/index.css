@@ -1,0 +1,22 @@
+.bag-item {
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  transform: translate(-70%, -65%);
+}
+
+.bag-item:hover {
+  filter: brightness(1.2);
+}
+
+.bag-item.selected {
+  filter: drop-shadow(0 0 12px #fff);
+}
+
+.bag-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
