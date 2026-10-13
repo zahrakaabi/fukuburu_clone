@@ -10,10 +10,10 @@ import "./index.css";
 /* -------------------------------------------------------------------------- */
 /*                             SPACESHIP COMPONENT                            */
 /* -------------------------------------------------------------------------- */
-function Spaceship({ target, phase, bagHeight, gap = 70 }) {
+function Spaceship({ target, phase, bagHeight, gap = 40 }) {
 /* --------------------------------- CONSTS --------------------------------- */
     const away = phase === "idle" || phase === "leaving";
-    const top = target && !away ? target.y - bagHeight - gap : -200;
+    const top = target && !away ? target.y - bagHeight - gap : -400;
 
 /* -------------------------------- RENDERING ------------------------------- */
     return (

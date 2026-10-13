@@ -4,7 +4,7 @@
   border: none;
   cursor: pointer;
   transition: transform 0.9s ease-in, opacity 0.9s, filter 0.2s;
-  transform: translate(-70%, -65%);
+  transform: translate(-75%, -25%); /*-70%, -65%*/
 }
 
 .bag-item:hover {

@@ -49,7 +49,7 @@ function FukuburuBags() {
 
 /* -------------------------------- RENDRING -------------------------------- */
   return (
-    <div>
+    <>
       <div className="bags-board" style={{ width: BOARD_WIDTH, height: BOARD_HEIGHT }}>
         <img
           className="board"
@@ -65,17 +65,17 @@ function FukuburuBags() {
           onClick={() => start(bag.id)}
         />)}
 
-      <Spaceship
-        target={target}
-        phase={phase}
-        bagHeight={BAG_HEIGHT}
-      />
+        <Spaceship
+          target={target}
+          phase={phase}
+          bagHeight={BAG_HEIGHT}
+        />
       </div>
 
       <p className="remaining" aria-live="polite">
         {bags.length} bags left
       </p>
-    </div>
+    </>
   )
 };
 

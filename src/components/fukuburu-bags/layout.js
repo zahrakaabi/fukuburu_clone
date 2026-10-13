@@ -1,12 +1,12 @@
 export const COLORS = ["orange", "green", "yellow", "blue", "pink"];
 export const SIZES = ["XS", "S", "M", "L", "XL"];
 
-export const BOARD_WIDTH = 900;
-export const BOARD_HEIGHT = 450;
+export const BOARD_WIDTH = 400;
+export const BOARD_HEIGHT = 150;
 
 const CELLS = 5;
 export const TILE_W = BOARD_WIDTH / CELLS;
-const TILE_H = (BOARD_HEIGHT  * 1.2) / CELLS;
+const TILE_H = (BOARD_HEIGHT  * 1.6) / CELLS;
 const ORIGIN = { x: TILE_W / 2, y: BOARD_HEIGHT / 2 };
 
 export const BAG_WIDTH = TILE_W * 0.5;
