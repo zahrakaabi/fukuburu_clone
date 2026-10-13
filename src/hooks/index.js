@@ -1,0 +1,1 @@
+export { default as useAbduction } from "./use-abduction";
