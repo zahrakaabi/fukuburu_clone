@@ -17,7 +17,7 @@ import "./index.css";
 /* -------------------------------------------------------------------------- */
 /*                             BAG ITEM COMPONENT                             */
 /* -------------------------------------------------------------------------- */
-function BagItem({ bag, selectedId, handleSelect }) {
+function BagItem({ bag, isSelected, isAbducted, onClick }) {
 /* --------------------------------- CONSTS --------------------------------- */
   const { id, color, size } = bag;
   const { x, y, zIndex } = getBagPosition(color, size);
@@ -33,19 +33,22 @@ function BagItem({ bag, selectedId, handleSelect }) {
 /* -------------------------------- RENDERING ------------------------------- */
   return (
     <button
-        key ={id}
-        className={selectedId === id ? "bag-item selected" : "bag-item"}
-        type="button"
-        style={{
+      key ={id}
+      className={`bag-item 
+        ${isSelected === id ? "bag-item selected" : "bag-item"}
+        ${isAbducted ? "abducted" : ""}
+      `}
+      type="button"
+      style={{
         width: `${BAG_WIDTH}px`,
         position: "absolute",
         left: `${x}px`,
         top: `${y}px`,
         zIndex
-        }}
-        aria-label={`Take ${color} bag, size ${size}`}
-        aria-pressed={selectedId === id}
-        onClick={() => handleSelect(id)}
+      }}
+      aria-label={`Take ${color} bag, size ${size}`}
+      aria-pressed={isSelected === id}
+      onClick={onClick}
     >
         <img
         src={BAG_IMAGES[color]}

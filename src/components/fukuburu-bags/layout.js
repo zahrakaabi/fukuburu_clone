@@ -10,6 +10,7 @@ const TILE_H = (BOARD_HEIGHT  * 1.2) / CELLS;
 const ORIGIN = { x: TILE_W / 2, y: BOARD_HEIGHT / 2 };
 
 export const BAG_WIDTH = TILE_W * 0.5;
+export const BAG_HEIGHT = BAG_WIDTH * 1.2;
 
 export function getBagPosition(color, size) {
    const row = COLORS.indexOf(color);

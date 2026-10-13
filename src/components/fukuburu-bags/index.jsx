@@ -6,10 +6,12 @@ import { useEffect, useState } from "react";
 
 // UI Local Components
 import BagItem from "../bag-item";
+import Spaceship from "../spaceship";
 
 // Utils
 import { fetchBags } from "../../api/bags";
-import { BOARD_HEIGHT, BOARD_WIDTH, getBagPosition } from "./layout";
+import { BAG_HEIGHT, BOARD_HEIGHT, BOARD_WIDTH, getBagPosition } from "./layout";
+import { useAbduction } from "../../hooks";
 
 // Images
 import BOARD from "../../images/base_suppor.svg";
@@ -26,7 +28,9 @@ function FukuburuBags() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [selectedId, setSelectedId] = useState(null);
+  const { start, phase, selectedId } = useAbduction({
+    onComplete: (id) => setBags((prev) => prev.filter((bag) => bag.id !== id))
+  });
 
   useEffect(() => {
     fetchBags()
@@ -37,10 +41,6 @@ function FukuburuBags() {
 
   if (loading) return <p>Loading bags...</p>;
   if (error) return <p>Error: {error}</p>;
-
-  const handleSelect = (id) => {
-    setSelectedId((prev) => (prev === id ? null : id));
-  };
 
   const selectedBag = bags.find((bag) => bag.id === selectedId);
   const target = selectedBag 
@@ -60,10 +60,16 @@ function FukuburuBags() {
 
         {bags.map((bag) => <BagItem 
           key={bag.id} 
-          bag={bag} 
-          selectedId={selectedId} 
-          handleSelect={handleSelect}
+          bag={bag}
+          isAbducted={selectedId === bag.id && (phase === "beaming" || phase === "leaving")}
+          onClick={() => start(bag.id)}
         />)}
+
+      <Spaceship
+        target={target}
+        phase={phase}
+        bagHeight={BAG_HEIGHT}
+      />
       </div>
 
       <p className="remaining" aria-live="polite">
