@@ -50,7 +50,8 @@ function FukuburuBags() {
 /* -------------------------------- RENDRING -------------------------------- */
   return (
     <>
-      <div className="bags-board" style={{ width: BOARD_WIDTH, height: BOARD_HEIGHT }}>
+      <div className={`bags-board ${phase === "idle" ? "idle" : ""}`} 
+      style={{ width: BOARD_WIDTH, height: BOARD_HEIGHT }}>
         <img
           className="board"
           src={BOARD}
